@@ -4,8 +4,14 @@ namespace Eduweb;
 
 class Car
 {
-    public $make = '';
-    public $model = '';
+    protected $make = '';
+    protected $model = '';
+
+    public function __construct(string $make, string $model)
+    {
+        $this->make = $make;
+        $this->model = $model;
+    }
 
     public function drive() : void
     {
