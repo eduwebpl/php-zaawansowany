@@ -3,11 +3,12 @@
 include_once __DIR__ . '/vendor/autoload.php';
 
 use \Eduweb\Car;
+use \Eduweb\Speed;
 
-$car = new Car('Ford', 'Mondeo');
-$car->setSpeed(1.5);
+$speed = new Speed(1.5);
 
-var_dump($car);
-var_dump('Speed:', $car->getSpeed() * 2);
+echo "\n" . $speed->getValue() . "\n";
 
-$car->drive();
+$car = new Car('Ford', 'Mondeo', $speed);
+
+echo 'Speed: ' . $car->getSpeed()->getValue() . 'km/h';

@@ -6,7 +6,7 @@ class Car
 {
     protected $make = '';
     protected $model = '';
-    protected $speed = 0.0;
+    protected $speed;
 
     public function __construct(string $make, string $model, Speed $speed)
     {
@@ -15,16 +15,8 @@ class Car
         $this->speed = $speed;
     }
 
-    public function setSpeed(float $speed) : void
+    public function getSpeed() : Speed
     {
-        if ($speed < 0) {
-            return;
-        }
-
-        $this->speed = $speed;
-    }
-
-    public function getSpeed() : float{
         return $this->speed;
     }
 
