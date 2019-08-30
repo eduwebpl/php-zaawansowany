@@ -9,16 +9,16 @@ class Speed
     const KILOMETERS = 'km/h';
 
     protected $value = 0.0;
-    protected $type = self::KILOMETERS;
-    protected $validTypes = [
+    protected $unit = self::KILOMETERS;
+    protected $validUnits = [
         self::KILOMETERS,
         self::MILES,
     ];
 
-    public function __construct(float $value, ?string $type = null)
+    public function __construct(float $value, ?string $unit = null)
     {
-        if (in_array($type, $this->validTypes, true)) {
-            $this->type = $type;
+        if (in_array($unit, $this->validUnits, true)) {
+            $this->unit = $unit;
         }
 
         $this->value = $value;
@@ -27,6 +27,11 @@ class Speed
     public function getValue() : float
     {
         return $this->value;
+    }
+
+    public function __toString() : string
+    {
+        return sprintf('%.2f %s', $this->value, $this->unit);
     }
 
 }

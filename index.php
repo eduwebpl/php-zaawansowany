@@ -11,4 +11,4 @@ echo "\n" . $speed->getValue() . "\n";
 
 $car = new Car('Ford', 'Mondeo', $speed);
 
-echo 'Speed: ' . $car->getSpeed()->getValue() . 'km/h';
+echo 'Speed: ' . $car->getSpeed();
