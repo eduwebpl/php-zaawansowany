@@ -24,6 +24,11 @@ class Speed
         $this->value = $value;
     }
 
+    public function slowDown() : void
+    {
+        $this->value = 0.9 * $this->value;
+    }
+
     public function getValue() : float
     {
         return $this->value;
