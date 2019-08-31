@@ -7,6 +7,7 @@ class Car
     protected $make = '';
     protected $model = '';
     protected $speed;
+    protected $color = 'red';
 
     public function __construct(string $make, string $model, Speed $speed)
     {
@@ -29,4 +30,10 @@ class Car
     {
         echo "\nDriving";
     }
+
+    public function getColor() : string
+    {
+        return $this->color;
+    }
+
 }

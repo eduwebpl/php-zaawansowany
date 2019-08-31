@@ -7,8 +7,8 @@ use \Eduweb\Speed;
 
 $speed = new Speed(1.5);
 
-echo "\n" . $speed->getValue() . "\n";
-
 $car = new Car('Ford', 'Mondeo', $speed);
+
+echo 'Color: ' . $car->getColor() . "\n";
 
 echo 'Speed: ' . $car->getSpeed();
