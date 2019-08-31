@@ -36,9 +36,4 @@ class Car
     {
         return $this->color;
     }
-
-    public function __call(string $name, array $attr){
-        var_dump($name, $attr);
-    }
-
 }
