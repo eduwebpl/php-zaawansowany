@@ -9,11 +9,7 @@ $speed = new Speed(1.5);
 
 $car = new Car('Ford', 'Mondeo', $speed);
 
-$car->sits = 4;
-
-echo 'Sits: ' . $car->sits . "\n";
-
-var_dump($car);
+$car->test('a', 'b', 4);
 
 echo 'Color: ' . $car->getColor() . "\n";
 
