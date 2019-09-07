@@ -12,13 +12,5 @@ $cab = new Cab('Ford', 'Mondeo', $speed);
 
 $car = new Car('Ford', 'Mondeo', $speed);
 
-$cab->drive();
-$car->drive();
-
-var_dump(Cab::TEST);
-var_dump(Car::TEST);
-
-
-//echo 'Color: ' . $car->getColor() . "\n";
-//
-//echo 'Speed: ' . $car->getSpeed();
+echo 'Car Color: ' . $car->getColor() . "\n";
+echo 'Cab Color: ' . $cab->getColor() . "\n";
