@@ -4,6 +4,9 @@ namespace Eduweb;
 
 class Car
 {
+
+    const TEST = 'abc';
+
     protected $make = '';
     protected $model = '';
     protected $speed;
@@ -29,7 +32,7 @@ class Car
 
     public function drive() : void
     {
-        echo "\nDriving";
+        echo "\nDriving car";
     }
 
     public function getColor() : string
