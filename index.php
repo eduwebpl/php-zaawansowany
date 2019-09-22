@@ -3,6 +3,9 @@
 include_once __DIR__ . '/vendor/autoload.php';
 
 use \Eduweb\Game\Race;
+use \Eduweb\Game\Weather;
 
-$race = new Race();
+$weather = new Weather();
+
+$race = new Race($weather);
 $race->run();
