@@ -7,7 +7,7 @@ class Weather
     private $current = self::SHINING;
 
     const RAINING = 'raining';
-    const SHINING = 'shaining';
+    const SHINING = 'shining';
 
     public function randomiseWeather() : void
     {
