@@ -8,7 +8,7 @@ class VehicleFactory
     const MOTOR = 'motor';
     const TRUCK = 'truck';
 
-    public static function factory(string $type, string $name) : AbstractVehicle
+    public static function factory(string $type, string $name) : Vehicle
     {
         $vehicle = null;
 

@@ -2,7 +2,7 @@
 
 namespace Eduweb\Game;
 
-abstract class AbstractVehicle
+abstract class AbstractVehicle implements Vehicle
 {
     private $name;
 
@@ -11,7 +11,7 @@ abstract class AbstractVehicle
         $this->name = $name;
     }
 
-    public function move()
+    public function move() : void
     {
         echo "\n Moving Car ({$this->name})";
     }
