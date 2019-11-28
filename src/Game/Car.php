@@ -4,7 +4,10 @@ namespace Eduweb\Game;
 
 class Car extends AbstractVehicle
 {
-    protected function getName() : string {
-        return $this->name;
+    protected $type = 'Car';
+
+    protected function getName() : string
+    {
+        return strtoupper($this->name);
     }
 }
