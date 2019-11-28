@@ -4,7 +4,7 @@ namespace Eduweb\Game;
 
 abstract class AbstractVehicle implements Vehicle
 {
-    private $name;
+    protected $name;
 
     public function __construct(string $name)
     {
@@ -13,6 +13,8 @@ abstract class AbstractVehicle implements Vehicle
 
     public function move() : void
     {
-        echo "\n Moving Car ({$this->name})";
+        echo "\n Moving Car ({$this->getName()})";
     }
+
+    abstract protected function getName() : string;
 }
