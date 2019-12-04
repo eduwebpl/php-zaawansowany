@@ -7,6 +7,9 @@ class Race
     private $distance = 0;
     private $maxTours = 5;
     private $weather;
+    /**
+     * @var Vehicle[]
+     */
     private $vehicles = [];
 
     public function __construct(Weather $weather, float $distance = 5)

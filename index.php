@@ -4,13 +4,30 @@ include_once __DIR__ . '/vendor/autoload.php';
 
 use \Eduweb\Game\Race;
 use \Eduweb\Game\Weather;
-use \Eduweb\Game\VehicleFactory;
+use \Eduweb\Game\VehicleBuilder;
+
+$builder = new VehicleBuilder();
 
 $weather = new Weather();
 
 $race = new Race($weather);
-$race->addVehicle(VehicleFactory::factory(VehicleFactory::CAR, 'abCD'));
-$race->addVehicle(VehicleFactory::factory(VehicleFactory::CAR, 'cdEf'));
-$race->addVehicle(VehicleFactory::factory(VehicleFactory::TRUCK, 'ghi'));
-$race->addVehicle(VehicleFactory::factory(VehicleFactory::MOTOR, 'zaW4'));
+
+$builder->setType(VehicleBuilder::CAR);
+$builder->setName('abc');
+
+$race->addVehicle($builder->build());
+
+$builder->setName('cde');
+$race->addVehicle($builder->build());
+
+$builder->setType(VehicleBuilder::TRUCK);
+$builder->setName('ghi');
+
+$race->addVehicle($builder->build());
+
+$builder->setType(VehicleBuilder::MOTOR);
+$builder->setName('efg');
+
+$race->addVehicle($builder->build());
+
 $race->run();
