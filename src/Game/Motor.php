@@ -7,7 +7,7 @@ class Motor extends AbstractVehicle
     protected $type = 'Motor';
     protected $maxSpeed = 250;
 
-    protected function getName() : string
+    public function getName() : string
     {
         return $this->name;
     }
