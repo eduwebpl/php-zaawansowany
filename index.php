@@ -5,6 +5,7 @@ include_once __DIR__ . '/vendor/autoload.php';
 use \Eduweb\Game\Race;
 use \Eduweb\Game\Weather;
 use \Eduweb\Game\VehicleBuilder;
+use \Eduweb\Game\ShinyCar;
 
 $builder = new VehicleBuilder();
 
@@ -15,7 +16,7 @@ $race = new Race($weather);
 $builder->setType(VehicleBuilder::CAR);
 $builder->setName('abc');
 
-$race->addVehicle($builder->build());
+$race->addVehicle(new ShinyCar($builder->build()));
 
 $builder->setName('cde');
 $race->addVehicle($builder->build());
