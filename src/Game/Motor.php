@@ -15,6 +15,11 @@ class Motor extends AbstractVehicle
     protected function preMove() : void
     {
         $this->distance += $this->maxSpeed * rand(20, 100) / 100;
+
+        $weather = Weather::getInstance();
+        if ($weather->isRaining()) {
+            $this->distance -= 20;
+        }
     }
 
 }

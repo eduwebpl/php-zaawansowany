@@ -2,12 +2,25 @@
 
 namespace Eduweb\Game;
 
-class Weather
+final class Weather
 {
     private $current = self::SHINING;
 
     const RAINING = 'raining';
     const SHINING = 'shining';
+
+    private static $instance;
+
+    private function __construct() { }
+
+    public static function getInstance() : self
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new self();
+        }
+
+        return self::$instance;
+    }
 
     public function randomiseWeather() : void
     {
