@@ -2,7 +2,7 @@
 
 namespace Eduweb\Game;
 
-class ShinyCar implements Vehicle
+class ShinyCar implements Vehicle, Observer
 {
     /**
      * @var Car
@@ -36,5 +36,10 @@ class ShinyCar implements Vehicle
     public function getType() : string
     {
         return $this->car->getType();
+    }
+
+    public function notify(string $event) : void
+    {
+        $this->car->notify($event);
     }
 }

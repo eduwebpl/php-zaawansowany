@@ -2,7 +2,7 @@
 
 namespace Eduweb\Game;
 
-abstract class AbstractVehicle implements Vehicle
+abstract class AbstractVehicle implements Vehicle, Observer
 {
     protected $name;
     protected $type;

@@ -2,7 +2,7 @@
 
 namespace Eduweb\Game;
 
-class Race
+class Race implements Observable
 {
     private $distance = 0;
     private $maxTours = 5;
@@ -11,7 +11,8 @@ class Race
      * @var Vehicle[]
      */
     private $vehicles = [];
-    private $observers = [];
+
+    use ObservedTrait;
 
     public function __construct(Weather $weather, float $distance = 5)
     {
@@ -34,11 +35,6 @@ class Race
         }
 
         $this->displayWinners();
-    }
-
-    public function addObserver($observer) : void
-    {
-        $this->observers[] = $observer;
     }
 
     private function tour(int $tour) : void
