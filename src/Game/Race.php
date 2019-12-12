@@ -11,6 +11,7 @@ class Race
      * @var Vehicle[]
      */
     private $vehicles = [];
+    private $observers = [];
 
     public function __construct(Weather $weather, float $distance = 5)
     {
@@ -20,6 +21,7 @@ class Race
 
     public function addVehicle(Vehicle $vehicle) : void
     {
+        $this->addObserver($vehicle);
         $this->vehicles[] = $vehicle;
     }
 
@@ -34,12 +36,18 @@ class Race
         $this->displayWinners();
     }
 
+    public function addObserver($observer) : void
+    {
+        $this->observers[] = $observer;
+    }
+
     private function tour(int $tour) : void
     {
         $this->weather->randomiseWeather();
         $this->displayTourInfo($tour);
-        foreach ($this->vehicles as $vehicle) {
-            $vehicle->move();
+
+        foreach ($this->observers as $observer) {
+            $observer->notify('nextTurn');
         }
     }
 

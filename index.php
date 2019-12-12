@@ -19,6 +19,7 @@ $builder->setName('abc');
 $race->addVehicle(new ShinyCar($builder->build()));
 
 $builder->setName('cde');
+
 $race->addVehicle($builder->build());
 
 $builder->setType(VehicleBuilder::TRUCK);
