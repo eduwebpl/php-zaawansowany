@@ -4,7 +4,6 @@ namespace Eduweb;
 
 class Speed
 {
-
     const MILES = 'mph';
     const KILOMETERS = 'km/h';
 
@@ -38,5 +37,4 @@ class Speed
     {
         return sprintf('%.2f %s', $this->value, $this->unit);
     }
-
 }

@@ -4,7 +4,6 @@ namespace Eduweb;
 
 class Car
 {
-
     const TEST = 'abc';
 
     protected $make = '';

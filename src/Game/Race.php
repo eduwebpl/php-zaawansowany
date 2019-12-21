@@ -95,5 +95,4 @@ class Race implements Observable
         echo sprintf("\n Tour %s began:", $tour);
         echo sprintf("\n %s", $this->weather);
     }
-
 }

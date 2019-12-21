@@ -4,7 +4,6 @@ namespace Eduweb;
 
 class Cab extends Car
 {
-
     private $color = 'yellow';
 
     public function drive() : void

@@ -14,5 +14,8 @@
   },
   "require": {
     "php-di/php-di": "^6.0"
+  },
+  "require-dev": {
+    "phploc/phploc": "^4.0"
   }
 }

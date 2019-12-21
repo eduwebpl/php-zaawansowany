@@ -21,5 +21,4 @@ class Motor extends AbstractVehicle
             $this->distance -= 20;
         }
     }
-
 }

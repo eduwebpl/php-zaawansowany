@@ -39,9 +39,13 @@ abstract class AbstractVehicle implements Vehicle, Observer
         return $this->type;
     }
 
-    protected function postMove() : void { }
+    protected function postMove() : void
+    {
+    }
 
-    protected function preMove() : void { }
+    protected function preMove() : void
+    {
+    }
 
     abstract public function getName() : string;
 }

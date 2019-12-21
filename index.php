@@ -17,11 +17,10 @@ $b->addDefinitions(
                 'getInstance',
             ]
         ),
-        'Race' => DI\create(Race::class)->constructor(DI\get('Weather'))
+        'Race'    => DI\create(Race::class)->constructor(DI\get('Weather')),
     ]
 );
 $container = $b->build();
-
 $builder = $container->get('VB');
 
 $race = $container->get('Race');
@@ -29,7 +28,9 @@ $race = $container->get('Race');
 $builder->setType(VehicleBuilder::CAR);
 $builder->setName('abc');
 
-$race->addVehicle(new ShinyCar($builder->build()));
+$race->addVehicle(
+    new ShinyCar($builder->build())
+);
 
 $builder->setName('cde');
 
