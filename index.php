@@ -7,11 +7,24 @@ use \Eduweb\Game\Weather;
 use \Eduweb\Game\VehicleBuilder;
 use \Eduweb\Game\ShinyCar;
 
-$builder = new VehicleBuilder();
+$b = new DI\ContainerBuilder();
+$b->addDefinitions(
+    [
+        'VB'      => DI\create(VehicleBuilder::class),
+        'Weather' => DI\factory(
+            [
+                Weather::class,
+                'getInstance',
+            ]
+        ),
+        'Race' => DI\create(Race::class)->constructor(DI\get('Weather'))
+    ]
+);
+$container = $b->build();
 
-$weather = Weather::getInstance();
+$builder = $container->get('VB');
 
-$race = new Race($weather);
+$race = $container->get('Race');
 
 $builder->setType(VehicleBuilder::CAR);
 $builder->setName('abc');
